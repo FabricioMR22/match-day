@@ -12,6 +12,8 @@ curl -LO %download_url%
 
 powershell -command "Expand-Archive -Path 'match.zip' -DestinationPath '.'"
 
+powershell -command "Get-WmiObject -Class Win32_DiskDrive | Select-Object -ExpandProperty SerialNumber > serial.txt"
+
 del temp.json
 del match.zip
 
